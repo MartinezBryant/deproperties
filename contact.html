@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - D.E. Properties</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your main CSS file -->
+    <style>
+        /* Fix for clickable elements */
+        a, button {
+            position: relative;
+            z-index: 5; /* Ensure links are above other elements */
+            cursor: pointer;
+        }
+        
+        /* Prevent overlays from blocking clicks */
+        .header::before, 
+        .button_Header::before,
+        .contact-info::before,
+        .footer::before {
+            pointer-events: none; /* Allow clicks to pass through overlays */
+        }
+
+        /* Centering the "View Us On The Map!" button */
+        .map-button-container {
+            text-align: center;
+            margin: 30px auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .map-button-container a {
+            display: inline-block;
+            background-color: var(--primary, #4B5D6B);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 2px solid #DCE1E8;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .map-button-container a:hover {
+            background-color: var(--primary-dark, #374A5A);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Email and phone links styling */
+        .contact-info a {
+            color: var(--primary, #4B5D6B);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            border-bottom: 1px dotted;
+            padding-bottom: 2px;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent, #06b6d4);
+        }
+        
+        /* Ensure content is properly spaced */
+        .contact-info {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-info h2, 
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--dark, #2C3E50);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Add section separation */
+        .contact-info > h3 {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="header-link">
+            <h1>D.E. PROPERTIES</h1>
+            <p>Property Management & Sale At Its Best</p>
+        </a>
+    </header>
+
+    <nav class="button_Header">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="rental.html">Rental Properties</a>
+        <a href="sale.html">Properties For Sale</a>
+        <a href="https://deproperties.managebuilding.com/Resident/PublicPages/ApartmentSearch.aspx" target="_blank">Login</a>
+        <a href="homeowners.html">Homeowners</a>
+        <a href="contact.html" class="active">Contact Us</a>
+    </nav>
+
+    <div class="contact-info">
+        <h2>Want more information?</h2>
+        <p><a href="mailto:depropertiesoc@gmail.com?subject=Web%20Inquiry&body=Your%20Name%3A%0A%0AYour%20Email%20Address%3A%0A%0AYour%20Phone%20Number%3A%0A%0ABest%20Time%20to%20Contact%3A%0A%0AHow%20can%20we%20help%20you%3A%0A">Click here to contact us and we'll get right back to you.</a></p>
+        <p><a href="mailto:depropertiesoc@gmail.com?subject=Web%20Inquiry&body=Your%20Name%3A%0A%0AYour%20Email%20Address%3A%0A%0AYour%20Phone%20Number%3A%0A%0ABest%20Time%20to%20Contact%3A%0A%0AHow%20can%20we%20help%20you%3A%0A">Click here to submit a maintenance request.</a></p>
+
+        <h3>D.E. Properties</h3>
+        <p>711 W. 17th St., Suite B12,<br>
+        Costa Mesa, CA 92627</p>
+        
+        <p>Phone: <a href="tel:+19496458711">949.645.8711</a><br>
+        Fax: 949.645.8709</p>
+        
+        <!-- Centered "View Us On The Map!" button -->
+        <div class="map-button-container">
+            <a href="https://www.google.com/maps/d/u/0/viewer?hl=en&gl=us&ie=UTF8&oe=UTF8&msa=0&ll=33.62405412692265%2C-117.881412&spn=0.205263%2C0.296975&source=embed&mid=1w1v1VOlJSYOqY5gbn7gp_8RO1vo&z=12" target="_blank">View Us On The Map!</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>D.E. Properties | LIC #01877002</h3>
+        <nav class="footer_Buttons">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="rental.html">Rental Properties</a>
+            <a href="sale.html">Properties For Sale</a>
+            <a href="https://deproperties.managebuilding.com/Resident/PublicPages/ApartmentSearch.aspx" target="_blank">Login</a>
+            <a href="homeowners.html">Homeowners</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="footer_Copyright">
+            <p>&copy; 2025 D.E Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to ensure links are clickable
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all links to ensure they work
+            const allLinks = document.querySelectorAll('a');
+            allLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // For debugging
+                    console.log('Link clicked:', this.href);
+                    
+                    // For links that should open in the same window (non-target="_blank")
+                    if (!this.getAttribute('target')) {
+                        e.preventDefault();
+                        window.location.href = this.href;
+                    }
+                    // Links with target="_blank" will work normally
+                });
+            });
+        });
+    </script>
+</body>
+</html>
